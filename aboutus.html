@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+<body>
+    <h2>About Our Company</h2>
+    <p><a href="home page.html">Back to Home</a></p>
+
+    <p>We are dedicated to delivering the best quality software and products to our clients worldwide.</p>
+    
+    <div id="moreInfo" style="display: none;">
+        <p>Founded in 2020, our company has grown from a small team of two into a global network serving thousands of customers daily.</p>
+    </div>
+
+    <button id="toggleBtn" onclick="toggleDetails()">Read More</button>
+
+    <script>
+        function toggleDetails() {
+            const moreInfo = document.getElementById("moreInfo");
+            const btn = document.getElementById("toggleBtn");
+
+            if (moreInfo.style.display === "none") {
+                moreInfo.style.display = "block";
+                btn.textContent = "Read Less";
+            } else {
+                moreInfo.style.display = "none";
+                btn.textContent = "Read More";
+            }
+        }
+    </script>
+</body>
+</html>

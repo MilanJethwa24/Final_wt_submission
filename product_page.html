@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+</head>
+<body>
+    <h2>Our Product Catalog</h2>
+    <p><a href="home page.html">Back to Home</a></p>
+
+    <input type="text" id="productInput" placeholder="Enter a new product...">
+    <button onclick="addProduct()">Add Product</button>
+
+    <ol id="productList">
+        <li>Laptop</li>
+        <li>Smartphone</li>
+        <li>Wireless Headphones</li>
+    </ol>
+
+    <script>
+        function addProduct() {
+            const input = document.getElementById("productInput");
+            const list = document.getElementById("productList");
+            const text = input.value.trim();
+
+            if (text !== "") {
+                const li = document.createElement("li");
+                li.textContent = text;
+                list.appendChild(li);
+                input.value = "";
+            } else {
+                alert("Please enter a product name!");
+            }
+        }
+    </script>
+</body>
+</html>

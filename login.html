@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Account Login</h2>
+    <p><a href="home page.html">Back to Home</a></p>
+
+    <form id="loginForm" onsubmit="return validateLogin(event)">
+        <input type="text" id="username" placeholder="Username (Type: admin)" required><br><br>
+        <input type="password" id="password" placeholder="Password (Type: 1234)" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // फॉर्म को डिफ़ॉल्ट रूप से सबमिट होने से रोकना
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            if (user === "admin" && pass === "1234") {
+                alert("Login successful!");
+                window.location.href = "profile.html"; // प्रोफाइल पेज पर भेजें
+            } else {
+                alert("Invalid username or password. Try admin / 1234");
+            }
+        }
+    </script>
+</body>
+</html>

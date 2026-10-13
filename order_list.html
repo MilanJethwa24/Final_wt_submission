@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Ordered List</title>
+</head>
+<body>
+
+    <h2>My Shopping List</h2>
+
+    <!-- Input field and button to add new items -->
+    <input type="text" id="itemInput" placeholder="Enter a new item...">
+    <button onclick="addItem()">Add to List</button>
+
+    <!-- The ordered list where items will be added -->
+    <ol id="myOrderedList">
+        <li>Apples</li>
+        <li>Bananas</li>
+    </ol>
+
+    <!-- JavaScript Integrated inside the HTML file -->
+    <script>
+        function addItem() {
+            // Select the input field and the ordered list by their IDs
+            const itemInput = document.getElementById("itemInput");
+            const orderedList = document.getElementById("myOrderedList");
+
+            // Get the value from the input box and remove extra spaces
+            const itemText = itemInput.value.trim();
+
+            // Check if the input is not empty
+            if (itemText !== "") {
+                // Create a new <li> element
+                const newListItem = document.createElement("li");
+                
+                // Set the text content of the new <li>
+                newListItem.textContent = itemText;
+                
+                // Append the new <li> to the ordered list (<ol>)
+                orderedList.appendChild(newListItem);
+                
+                // Clear the input box for the next entry
+                itemInput.value = "";
+            } else {
+                alert("Please enter an item first!");
+            }
+        }
+    </script>
+
+</body>
+</html>

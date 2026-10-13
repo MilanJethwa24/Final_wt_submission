@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h2>User Profile</h2>
+    <p>Welcome back, <strong id="userName">Admin User</strong>!</p>
+    <p>Last login session started on: <span id="sessionTime"></span></p>
+
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        // आज की तारीख और समय दिखाना
+        document.getElementById("sessionTime").textContent = new Date().toLocaleString();
+
+        function logout() {
+            alert("Logging out...");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review & Feedback</title>
+</head>
+<body>
+    <h2>Client Feedback</h2>
+    <p><a href="home page.html">Back to Home</a></p>
+
+    <textarea id="feedbackText" placeholder="Write your review here..." rows="4" cols="30"></textarea><br><br>
+    <button onclick="submitFeedback()">Submit Review</button>
+
+    <h3>Recent Reviews:</h3>
+    <ol id="feedbackList">
+        <li>"Great products and fast shipping!" - John</li>
+        <li>"Customer service was very helpful." - Sarah</li>
+    </ol>
+
+    <script>
+        function submitFeedback() {
+            const textarea = document.getElementById("feedbackText");
+            const list = document.getElementById("feedbackList");
+            const text = textarea.value.trim();
+
+            if (text !== "") {
+                const li = document.createElement("li");
+                li.textContent = `"${text}" - Anonymous`;
+                list.appendChild(li);
+                textarea.value = "";
+                alert("Thank you for your feedback!");
+            } else {
+                alert("Please write something before submitting.");
+            }
+        }
+    </script>
+</body>
+</html>
